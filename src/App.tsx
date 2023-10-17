@@ -33,16 +33,18 @@ function App() {
   );
 
   return (
-    <div className='container bg-white my-10 p-5 mx-auto rounded-xl space-y-6'>
-      <h1 className='text-3xl font-bold'>Todo List</h1>
-      
-      <TodoTable 
-        todos={todos} 
-        onDelete={handleDelete}
-        onToggleComplete={handleToggleCompleted}
-      />
+    <div className='container my-6 mx-auto sm:rounded-xl space-y-2'>
+      <h1 className='text-3xl font-bold text-white'>Todo List</h1>
 
-      <AddTodo onAdd={handleAdd} />
+      <div className='bg-white p-5 sm:rounded-xl space-y-6'>
+        <TodoTable
+          todos={todos}
+          onDelete={handleDelete}
+          onToggleComplete={handleToggleCompleted}
+        />
+
+        <AddTodo onAdd={handleAdd} />
+      </div>
     </div>
   );
 }
