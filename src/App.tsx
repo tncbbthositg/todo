@@ -1,10 +1,11 @@
-import { useCallback, useState } from "react";
-import { TodoItem } from "./models";
-import { TodoTable } from "./molecules";
-import { AddTodo } from "./forms";
+import { useCallback } from 'react';
+import { useLocalStorage } from 'usehooks-ts';
+import { TodoItem } from './models';
+import { TodoTable } from './molecules';
+import { AddTodo } from './forms';
 
 function App() {
-  const [todos, setTodos] = useState<TodoItem[]>([]);
+  const [todos, setTodos] = useLocalStorage<TodoItem[]>('todos', []);
 
   const handleAdd = useCallback(
     (todo: TodoItem) => {
